@@ -1,0 +1,19 @@
+{
+  "name": "@rxdi/main",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rxdi/main.git"
+  },
+  "author": "Kristiyan Tachev (@Stradivario)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rxdi/main/issues"
+  },
+  "homepage": "https://github.com/rxdi/main#readme"
+}
