@@ -1,3 +1,7 @@
 [submodule "core"]
 	path = core
 	url = git@github.com:rxdi/core.git
+
+[submodule "hapi"]
+	path = hapi
+	url = git@github.com:rxdi/hapi.git
