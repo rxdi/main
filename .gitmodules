@@ -5,3 +5,9 @@
 [submodule "hapi"]
 	path = hapi
 	url = git@github.com:rxdi/hapi.git
+[submodule "graphql"]
+	path = graphql
+	url = git@github.com:rxdi/graphql.git
+[submodule "graphql-pubsub"]
+	path = graphql-pubsub
+	url = git@github.com:rxdi/graphql-pubsub.git
