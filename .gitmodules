@@ -11,3 +11,12 @@
 [submodule "graphql-pubsub"]
 	path = graphql-pubsub
 	url = git@github.com:rxdi/graphql-pubsub.git
+[submodule "starter-client-side"]
+	path = starter-client-side
+	url = git@github.com:rxdi/starter-client-side.git
+[submodule "starter-client-side-advanced"]
+	path = starter-client-side-advanced
+	url = git@github.com:rxdi/starter-client-side-advanced.git
+[submodule "starter-server-side"]
+	path = starter-server-side
+	url = git@github.com:rxdi/starter-server-side.git
