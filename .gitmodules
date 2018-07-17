@@ -26,3 +26,6 @@
 [submodule "install"]
 	path = install
 	url = git@github.com:rxdi/install.git
+[submodule "ipfs-package-example"]
+	path = ipfs-package-example
+	url = git@github.com:rxdi/ipfs-package-example.git
