@@ -23,3 +23,6 @@
 [submodule "dts-merge"]
 	path = dts-merge
 	url = git@github.com:rxdi/dts-merge.git
+[submodule "install"]
+	path = install
+	url = git@github.com:rxdi/install.git
