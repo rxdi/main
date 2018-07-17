@@ -20,3 +20,6 @@
 [submodule "starter-server-side"]
 	path = starter-server-side
 	url = git@github.com:rxdi/starter-server-side.git
+[submodule "dts-merge"]
+	path = dts-merge
+	url = git@github.com:rxdi/dts-merge.git
