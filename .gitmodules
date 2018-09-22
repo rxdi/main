@@ -29,3 +29,6 @@
 [submodule "ipfs-package-example"]
 	path = ipfs-package-example
 	url = git@github.com:rxdi/ipfs-package-example.git
+[submodule "deploy"]
+	path = deploy
+	url = git@github.com:rxdi/deploy.git
