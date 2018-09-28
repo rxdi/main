@@ -11,8 +11,7 @@
     "experimentalDecorators": true,
     "target": "es5",
     "typeRoots": [
-      "node_modules/@types",
-      "./node_modules/@types/rxjs"
+      "node_modules/@types"
     ],
     "lib": [
       "es2017",
