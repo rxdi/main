@@ -1,6 +1,6 @@
 config:
   schema:
-    introspectionEndpoint: http://localhost:9000/graphql
+    introspectionEndpoint: http://localhost:9300/graphql
     introspectionOutputFolder: ./src/app/core/api-introspection
 commands:
   documents:

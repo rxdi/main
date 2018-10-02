@@ -4,5 +4,24 @@
 
 body, html, .mat-drawer-container {
     background-color: white;
+    padding: 0;
+    margin: 0;
 }
 
+
+
+.pointer {
+    cursor: pointer;
+}
+
+.pointer:hover {
+    background-color: rgb(23, 129, 190);
+    color: white;
+}
+
+.spacer {
+    flex: 1 3 auto;
+}
+
+
+monaco-editor { height: 500px; display:block; }

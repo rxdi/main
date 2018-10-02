@@ -1,18 +1,39 @@
-<div style="height: 500px">
-    <mat-drawer-container class="example-container" autosize>
-        <mat-drawer #drawer class="example-sidenav" mode="side">
-          <p>Auto-resizing sidenav</p>
-          <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-          <button (click)="showFiller = !showFiller" mat-raised-button>
-            Toggle extra text
-          </button>
-        </mat-drawer>
+<div style="height: 100%">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <!-- <mat-icon class="pointer example-icon" (click)="drawer.toggle()">favorite</mat-icon> -->
+          <span class="example-spacer"></span>
+          <button style="margin-right: 10px" (click)="goTo('/namespace')" mat-raised-button color="warn">Namespaces</button>
+          <button style="margin-right: 10px" (click)="goTo('/folders')" mat-raised-button color="warn">Folders</button>
+          <button style="margin-right: 10px" (click)="goTo('/builds')" mat-raised-button color="warn">Builds</button>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+    <p *ngFor="let m of (stream | async)">
+        {{ m.message }}
+    </p>
+<!--     
+  <mat-drawer-container class="example-container" autosize>
+    
+    <mat-drawer #drawer class="example-sidenav" mode="side">
       
-        <div class="example-sidenav-content">
-          <button type="button" mat-button (click)="drawer.toggle()">
-            Toggle sidenav
-          </button>
-        </div>
-      {{ (test | async) | json }}
-      </mat-drawer-container>
+      <div style="display: inline-grid;">
+
+        <button style="margin-bottom:20px;" mat-raised-button>
+          Build
+        </button>
+        <button style="margin-bottom:20px;" mat-raised-button>
+          History
+        </button>
+        <button style="margin-bottom:20px;" mat-raised-button>
+          Settings
+        </button>
+      </div>
+    </mat-drawer>
+
+  </mat-drawer-container> -->
+
 </div>

@@ -8,19 +8,27 @@ import { NewPostGQL } from './test';
 import { CoreModule } from './core/core.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { AppRoutingModule } from './app-routing.module';
+import { MainViewComponent } from './main-view/main-view.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainViewComponent
   ],
   imports: [
     BrowserModule,
     GraphQLModule,
     HttpClientModule,
+    AppRoutingModule,
     CoreModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [
     NewPostGQL,

@@ -1,9 +1,16 @@
 import { NgModule } from "@angular/core";
 import { ServerService } from "./services/server/server.service";
+import { NamespaceService } from "./services/namespace/namespace.service";
+import { FileService } from "./services/file/file.service";
+import { BuilderService } from "./services/builder/builder.service";
 
 @NgModule({
     providers: [
-        ServerService
+        ServerService,
+        NamespaceService,
+        FileService,
+        BuilderService,
+        
     ]
 })
 export class CoreModule {}

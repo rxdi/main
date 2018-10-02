@@ -9,7 +9,7 @@ export class NewPostGQL extends Subscription {
   document = gql`
     subscription subscribeToUserMessagesBasic {
     subscribeToUserMessagesBasic {
-        id
+        message
     }
     }
   `;

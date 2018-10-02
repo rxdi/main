@@ -1,0 +1,31 @@
+query getNamespace($id: String!) {
+  getNamespace(id: $id) {
+    _id
+    name
+    builds {
+      _id
+      name
+      typings
+      module
+      metadata
+      message
+      hash
+      date
+      status {
+        file {
+          status
+          message
+        }
+        typings {
+          status
+          message
+        }
+        module {
+          status
+          message
+        }
+      }
+      namespaceId
+    }
+  }
+}

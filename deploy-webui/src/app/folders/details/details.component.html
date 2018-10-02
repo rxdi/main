@@ -1,0 +1,42 @@
+
+<div *ngIf="!loading">
+    <div style="display: flex">
+        <div>
+          <button mat-raised-button color="primary" (click)="back()">
+            Back
+          </button>
+        </div>
+        <span class="spacer"></span>
+      
+        <form *ngIf="isJsOrTs()" [formGroup]="form">
+          <mat-form-field style="margin-right:10px;">
+            <input formControlName="namespace" matInput placeholder="Namespace">
+          </mat-form-field>
+          <mat-form-field>
+            <input formControlName="commit" matInput placeholder="Commit message">
+          </mat-form-field>
+        </form>
+        <span class="spacer"></span>
+        <div>
+            <button *ngIf="isJsOrTs()" mat-raised-button (click)="build()" color="primary">
+                Build
+              </button>
+          <button *ngIf="isJsOrTs()" mat-raised-button (click)="deploy()" color="primary">
+            Deploy
+          </button>
+        </div>
+        </div>
+      
+      
+        
+        {{ file }}
+      
+        {{ (rawFile | async)?.file }}
+      
+        <monaco-editor
+        theme="vs-dark"
+        [file]="fileMonaco"
+        (fileChange)="onFileChange($event)">
+      </monaco-editor>
+      
+</div>

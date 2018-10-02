@@ -3,6 +3,9 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { NewPostGQL } from './test';
 import { ServerService } from './core/services/server/server.service';
+import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators/index';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,23 +14,24 @@ import { ServerService } from './core/services/server/server.service';
 })
 export class AppComponent {
   title = 'deploy-webui';
-  showFiller = false;
   test;
+  stream: BehaviorSubject<any[]> = new BehaviorSubject([]);
   constructor(
       private apollo: Apollo,
       private post: NewPostGQL,
-      private se: ServerService
+      private se: ServerService,
+      private router: Router
   ) {
     this.apollo.query({
-      query: gql(`
-        query findUser($id:String!) {
-          findUser(id:$id) {
-            id
+      query: gql`
+        query findUser($message:String!) {
+          findUser(message:$message) {
+            message
           }
         }
-      `),
+      `,
       variables: {
-        id: "1"
+        message: "1"
       }
     }).subscribe(stream => {
       debugger
@@ -35,20 +39,25 @@ export class AppComponent {
 
     this.test = this.post.subscribe();
     this.apollo.subscribe({
-      query: gql(`
+      query: gql`
       subscription subscribeToUserMessagesBasic {
         subscribeToUserMessagesBasic {
-          id
+          message
         }
       }
-      `),
-      variables: {
-        id: "1"
-      }
-    }).subscribe(stream => {
-      debugger
+      `
+    })
+    .pipe(
+      map((res) => res.data.subscribeToUserMessagesBasic)
+    )
+    .subscribe(s => {
+      this.stream.next([...this.stream.getValue(), s]);
     });
 
+  }
+
+  goTo(link: string) {
+    this.router.navigate([link]);
   }
 
 }

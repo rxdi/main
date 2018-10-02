@@ -1,0 +1,5 @@
+query readFile($folder:String!) {
+  readFile(folder:$folder) {
+    file
+  }
+}

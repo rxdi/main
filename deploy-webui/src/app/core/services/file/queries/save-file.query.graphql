@@ -1,0 +1,5 @@
+query saveFile($folder: String!, $content: String!){
+  saveFile(folder: $folder, content: $content) {
+    file
+  }
+}

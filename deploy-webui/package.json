@@ -6,7 +6,7 @@
     "start": "ng serve",
     "generate": "gapi schema introspect --collect-documents --collect-types && npm run generate:tschema",
     "generate:tschema": "./node_modules/.bin/apollo-codegen generate ./src/**/*.graphql --schema ./src/app/core/api-introspection/schema.json --target typescript --output ./src/app/core/api-introspection/operation-result-types.ts",
-    "build": "ng build",
+    "build": "ng build --prod --aot --base-href /webui/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -34,7 +34,9 @@
     "core-js": "^2.5.4",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.2",
-    "rxjs": "~6.2.0",
+    "monaco-editor": "^0.14.3",
+    "ngx-monaco": "^0.8.0",
+    "rxjs": "^6.2.2",
     "subscriptions-transport-ws": "^0.9.15",
     "zone.js": "~0.8.26"
   },
@@ -43,6 +45,7 @@
     "@angular/cli": "~6.2.3",
     "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
+    "@types/graphql": "^14.0.1",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",

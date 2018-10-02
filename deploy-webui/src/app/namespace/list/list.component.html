@@ -1,0 +1,10 @@
+<p>
+  List of namespaces:
+</p>
+
+
+<div *ngFor="let namespace of (namespaces | async)?.rows">
+  <mat-card (click)="goToDetails(namespace._id)" style="margin-bottom: 10px" class="pointer">
+      {{ namespace.name }}
+  </mat-card>
+</div>
