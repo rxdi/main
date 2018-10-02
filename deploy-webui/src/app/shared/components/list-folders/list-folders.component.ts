@@ -56,7 +56,7 @@ export class ListFoldersComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    this.fileService.default();
+    // this.fileService.default();
   }
 
   openFile(file: IFolderStructureType) {

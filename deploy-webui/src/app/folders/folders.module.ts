@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MonacoEditorModule } from 'ngx-monaco';
+import { MonacoEditorModule, COMPLETION_PROVIDERS } from 'ngx-monaco';
 
 @NgModule({
   imports: [

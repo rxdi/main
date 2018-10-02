@@ -50,9 +50,10 @@
     metadata: string | null;
     message: string | null;
     hash: string | null;
-    date: string | null;
     status: IBuildStatusType | null;
     namespaceId: string | null;
+    createdAt: string | null;
+    updatedAt: string | null;
 }
 
   

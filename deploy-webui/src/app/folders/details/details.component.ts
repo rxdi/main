@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 import { BuilderService } from '../../core/services/builder/builder.service';
 import { FileService } from '../../core/services/file/file.service';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ import { MonacoFile } from 'ngx-monaco';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
   file: string;
@@ -23,14 +23,18 @@ export class DetailsComponent implements OnInit {
     namespace: ['', Validators.required],
     commit: ['', Validators.required]
   });
+  defaultFileType: string = 'typescript';
   rawFile: Observable<IFileRawType>;
   fileMonaco: MonacoFile = {
     uri: 'index.js',
-    language: 'typescript',
+    language: this.defaultFileType,
     content: `console.log('hello world');`
   };
   loading: boolean = true;
   newFile: string;
+  extension: string;
+  fileChange = new Subject<MonacoFile>();
+
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -40,8 +44,12 @@ export class DetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     this.file = this.route.snapshot.paramMap.get('file');
-
+    this.extension = this.file.split('.').pop();
+    if(this.extension === 'json') {
+      this.defaultFileType = 'json';
+    }
     this.subscription = this.route.queryParams
       .subscribe(params => {
         this.path = params['path'];

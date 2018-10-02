@@ -9,7 +9,8 @@ query getBuildHistory($skip: Int, $limit: Int, $where: BuildWhereType) {
       metadata
       message
       hash
-      date
+      createdAt
+      updatedAt
       status {
         file {
           status

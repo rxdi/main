@@ -17,6 +17,10 @@ import { BackService } from './core/services/back.service';
 export class AppComponent {
   title = 'deploy-webui';
   test;
+  items: any[] = [
+    {label: 'Light', value: true},
+    {label: 'Console', value: false},
+    {label: 'T.V.', value: true}];
   stream: BehaviorSubject<any[]> = new BehaviorSubject([]);
   constructor(
       private apollo: Apollo,
@@ -26,20 +30,20 @@ export class AppComponent {
       private location: Location,
       public backService: BackService
   ) {
-    this.apollo.query({
-      query: gql`
-        query findUser($message:String!) {
-          findUser(message:$message) {
-            message
-          }
-        }
-      `,
-      variables: {
-        message: "1"
-      }
-    }).subscribe(stream => {
-      debugger
-    });
+    // this.apollo.query({
+    //   query: gql`
+    //     query findUser($message:String!) {
+    //       findUser(message:$message) {
+    //         message
+    //       }
+    //     }
+    //   `,
+    //   variables: {
+    //     message: "1"
+    //   }
+    // }).subscribe(stream => {
+    //   debugger
+    // });
 
     this.test = this.post.subscribe();
     this.apollo.subscribe({

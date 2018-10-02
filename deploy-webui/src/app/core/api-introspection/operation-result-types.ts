@@ -60,7 +60,8 @@ export interface getBuildHistory_getBuildHistory_rows {
   metadata: string | null;
   message: string | null;
   hash: string | null;
-  date: string | null;
+  createdAt: string | null;
+  updatedAt: string | null;
   status: getBuildHistory_getBuildHistory_rows_status | null;
   namespaceId: string | null;
 }
@@ -185,7 +186,6 @@ export interface getNamespace_getNamespace_builds {
   metadata: string | null;
   message: string | null;
   hash: string | null;
-  date: string | null;
   status: getNamespace_getNamespace_builds_status | null;
   namespaceId: string | null;
 }

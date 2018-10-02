@@ -10,7 +10,6 @@ query getNamespace($id: String!) {
       metadata
       message
       hash
-      date
       status {
         file {
           status

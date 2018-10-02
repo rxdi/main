@@ -20,6 +20,7 @@ import { CovalentStepsModule  } from '@covalent/core/steps';
 import { CovalentSearchModule  } from '@covalent/core/search';
 import { CovalentMenuModule  } from '@covalent/core/menu';
 import { CovalentNotificationsModule  } from '@covalent/core/notifications';
+import { CovalentLoadingModule } from '@covalent/core/loading';
 
 /* any other core modules */
 // (optional) Additional Covalent Modules imports
@@ -27,12 +28,15 @@ import { CovalentHttpModule } from '@covalent/http';
 import { CovalentHighlightModule } from '@covalent/highlight';
 import { CovalentMarkdownModule } from '@covalent/markdown';
 import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+import { COMPLETION_PROVIDERS } from 'ngx-monaco';
+import { TravisCompletionProvider } from './folders/folders.monaco.provider';
 export const COVALENT = [
   CovalentLayoutModule,
   CovalentStepsModule,
   CovalentSearchModule,
   CovalentMenuModule,
   MatMenuModule,
+  CovalentLoadingModule,
   CovalentNotificationsModule,
   MatDividerModule,
   MatListModule,
@@ -78,7 +82,8 @@ export const COVALENT = [
         }
         return config;
       }
-    }
+    },
+    { provide: COMPLETION_PROVIDERS, useClass: TravisCompletionProvider, multi: true }
   ],
   bootstrap: [AppComponent]
 })
