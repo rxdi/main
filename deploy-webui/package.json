@@ -1,6 +1,6 @@
 {
   "name": "deploy-webui",
-  "version": "0.0.318",
+  "version": "0.0.319",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
