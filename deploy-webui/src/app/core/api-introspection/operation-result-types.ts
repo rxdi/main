@@ -28,6 +28,63 @@ export interface triggerBuildVariables {
 // This file was automatically generated and should not be edited.
 
 // ====================================================
+// GraphQL query operation: getBuildHistory
+// ====================================================
+
+export interface getBuildHistory_getBuildHistory_rows_status_file {
+  status: string | null;
+  message: string | null;
+}
+
+export interface getBuildHistory_getBuildHistory_rows_status_typings {
+  status: string | null;
+  message: string | null;
+}
+
+export interface getBuildHistory_getBuildHistory_rows_status_module {
+  status: string | null;
+  message: string | null;
+}
+
+export interface getBuildHistory_getBuildHistory_rows_status {
+  file: getBuildHistory_getBuildHistory_rows_status_file | null;
+  typings: getBuildHistory_getBuildHistory_rows_status_typings | null;
+  module: getBuildHistory_getBuildHistory_rows_status_module | null;
+}
+
+export interface getBuildHistory_getBuildHistory_rows {
+  _id: string | null;
+  name: string | null;
+  typings: string | null;
+  module: string | null;
+  metadata: string | null;
+  message: string | null;
+  hash: string | null;
+  date: string | null;
+  status: getBuildHistory_getBuildHistory_rows_status | null;
+  namespaceId: string | null;
+}
+
+export interface getBuildHistory_getBuildHistory {
+  count: number | null;
+  rows: (getBuildHistory_getBuildHistory_rows | null)[] | null;
+}
+
+export interface getBuildHistory {
+  getBuildHistory: getBuildHistory_getBuildHistory | null;
+}
+
+export interface getBuildHistoryVariables {
+  skip?: number | null;
+  limit?: number | null;
+  where?: BuildWhereType | null;
+}
+
+
+/* tslint:disable */
+// This file was automatically generated and should not be edited.
+
+// ====================================================
 // GraphQL query operation: listFiles
 // ====================================================
 
@@ -180,6 +237,12 @@ export interface listNamespacesVariables {
 //==============================================================
 // START Enums and Input Objects
 //==============================================================
+
+// null
+export interface BuildWhereType {
+  namespaceId?: string | null;
+  name?: string | null;
+}
 
 //==============================================================
 // END Enums and Input Objects

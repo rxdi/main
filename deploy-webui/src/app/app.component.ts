@@ -6,6 +6,8 @@ import { ServerService } from './core/services/server/server.service';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators/index';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { BackService } from './core/services/back.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +22,9 @@ export class AppComponent {
       private apollo: Apollo,
       private post: NewPostGQL,
       private se: ServerService,
-      private router: Router
+      private router: Router,
+      private location: Location,
+      public backService: BackService
   ) {
     this.apollo.query({
       query: gql`
@@ -57,7 +61,13 @@ export class AppComponent {
   }
 
   goTo(link: string) {
+    this.backService.hideArrow();
     this.router.navigate([link]);
+  }
+
+  back() {
+    this.location.back();
+    this.backService.hideArrow();
   }
 
 }

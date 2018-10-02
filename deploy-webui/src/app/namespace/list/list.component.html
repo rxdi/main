@@ -1,10 +1,16 @@
-<p>
-  List of namespaces:
-</p>
-
-
-<div *ngFor="let namespace of (namespaces | async)?.rows">
-  <mat-card (click)="goToDetails(namespace._id)" style="margin-bottom: 10px" class="pointer">
-      {{ namespace.name }}
-  </mat-card>
-</div>
+<mat-list>
+    <mat-list-item>
+      Namespaces
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <td-virtual-scroll-container  #virtualScroll [style.height.px]="600" [data]="(namespaces | async)?.rows">
+      <ng-template let-row="row" let-last="last" tdVirtualScrollRow>
+        <mat-list-item (click)="goToDetails(row._id)" class="pointer" >
+          <mat-icon matListAvatar>hdr_strong</mat-icon>
+          <h4 matLine>{{row.name}}</h4>
+          <!-- <p matLine>Row: {{row.date}}</p> -->
+        </mat-list-item>
+        <mat-divider *ngIf="!last" [inset]="true"></mat-divider>
+      </ng-template>
+    </td-virtual-scroll-container>
+  </mat-list>

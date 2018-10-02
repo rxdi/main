@@ -3,6 +3,7 @@ import { NamespaceService } from '../../core/services/namespace/namespace.servic
 import { INamespacetype, INamespaceListType } from '../../core/api-introspection';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { BackService } from '../../core/services/back.service';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class ListComponent implements OnInit {
   namespaces: Observable<INamespaceListType>
   constructor(
     private namespaceService: NamespaceService,
-    private router: Router
+    private router: Router,
+    public backService: BackService
   ) { }
 
   ngOnInit() {
@@ -22,7 +24,8 @@ export class ListComponent implements OnInit {
   }
 
   goToDetails(id: string) {
-    this.router.navigate([`/namespace/details/${id}`])
+    this.backService.showArrow();
+    this.router.navigate([`/namespace/details/${id}`]);
   }
 
 }

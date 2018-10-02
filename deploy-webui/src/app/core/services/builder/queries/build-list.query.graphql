@@ -1,0 +1,30 @@
+query getBuildHistory($skip: Int, $limit: Int, $where: BuildWhereType) {
+  getBuildHistory(skip: $skip, limit: $limit, where: $where) {
+    count
+    rows {
+      _id
+      name
+      typings
+      module
+      metadata
+      message
+      hash
+      date
+      status {
+        file {
+          status
+          message
+        }
+        typings {
+          status
+          message
+        }
+        module {
+          status
+          message
+        }
+      }
+      namespaceId
+    }
+  }
+}

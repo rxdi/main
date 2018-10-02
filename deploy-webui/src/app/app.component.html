@@ -15,7 +15,7 @@
     </button> -->
     <!-- <span>Toolbar</span> -->
     
-    <td-notification-count class="pointer darkx" (click)="goTo('/folders')" color="primary" positionX="before">
+    <td-notification-count class="pointer dark" (click)="goTo('/folders')" color="primary" positionX="before">
       <mat-icon>folder</mat-icon>
     </td-notification-count>
 
@@ -24,6 +24,9 @@
     </td-notification-count>
     <td-notification-count class="pointer dark" (click)="goTo('/builds')" color="primary" positionX="before">
       <mat-icon>hdr_strong</mat-icon>
+    </td-notification-count>
+    <td-notification-count *ngIf="backService.isArrowVisible | async" class="pointer dark" (click)="back()" color="primary" positionX="before">
+      <mat-icon>arrow_back</mat-icon>
     </td-notification-count>
 
     <span class="spacer"></span>
