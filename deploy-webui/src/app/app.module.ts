@@ -10,15 +10,45 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
 import { AppRoutingModule } from './app-routing.module';
 import { MainViewComponent } from './main-view/main-view.component';
+import { CovalentLayoutModule } from '@covalent/core/layout';
+import { CovalentStepsModule  } from '@covalent/core/steps';
+import { CovalentSearchModule  } from '@covalent/core/search';
+import { CovalentMenuModule  } from '@covalent/core/menu';
+import { CovalentNotificationsModule  } from '@covalent/core/notifications';
 
+/* any other core modules */
+// (optional) Additional Covalent Modules imports
+import { CovalentHttpModule } from '@covalent/http';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+export const COVALENT = [
+  CovalentLayoutModule,
+  CovalentStepsModule,
+  CovalentSearchModule,
+  CovalentMenuModule,
+  MatMenuModule,
+  CovalentNotificationsModule,
+  MatDividerModule,
+  MatListModule,
+  // (optional) Additional Covalent Modules imports
+  CovalentHttpModule.forRoot(),
+  CovalentHighlightModule,
+  CovalentMarkdownModule,
+  CovalentDynamicFormsModule,
+]
 @NgModule({
   declarations: [
     AppComponent,
     MainViewComponent
   ],
   imports: [
+    ...COVALENT,
     BrowserModule,
     GraphQLModule,
     HttpClientModule,

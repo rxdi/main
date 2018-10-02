@@ -5,8 +5,7 @@ import { MainViewComponent } from './main-view/main-view.component';
 @NgModule({
   imports: [
     RouterModule.forRoot(<Routes>[
-      { path: '', component: MainViewComponent },
-      { path: '*', redirectTo: '', pathMatch: 'full' },
+      { path: '', redirectTo: 'folders', pathMatch: 'full' },
       { path: 'folders', loadChildren: './folders/folders.module#FoldersModule' },
       { path: 'builds', loadChildren: './builds/builds.module#BuildsModule' },
       { path: 'namespace', loadChildren: './namespace/namespace.module#NamespaceModule' },
