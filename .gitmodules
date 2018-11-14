@@ -32,3 +32,6 @@
 [submodule "deploy"]
 	path = deploy
 	url = git@github.com:rxdi/deploy.git
+[submodule "deploy-webui"]
+	path = deploy-webui
+	url = git@github.com:rxdi/deploy-webui.git
