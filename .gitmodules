@@ -35,3 +35,6 @@
 [submodule "browser-server"]
 	path = browser-server
 	url = git@github.com:rxdi/browser-server.git
+[submodule "deploy-webui"]
+	path = deploy-webui
+	url = git@github.com:rxdi/deploy-webui.git
