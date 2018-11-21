@@ -38,3 +38,6 @@
 [submodule "deploy-webui"]
 	path = deploy-webui
 	url = git@github.com:rxdi/deploy-webui.git
+[submodule "starter-client-router-preact"]
+	path = starter-client-router-preact
+	url = git@github.com:rxdi/starter-client-router-preact.git
