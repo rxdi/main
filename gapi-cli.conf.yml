@@ -7,7 +7,7 @@ commands:
 
   version:
     change:
-      - node ./build-versions.js && for d in ./*/ ; do (cd "$d" && git add . && git commit -m 'autocommitmessage' || true && npm version patch && git push && npm publish --update-readme --access public); done && gapi repo commit-patch
+      - node ./build-versions.js && for d in ./*/ ; do (cd "$d" && git add . && git commit -m 'autocommitmessage' || true && npm version patch && git push && npm publish --update-readme --access public); done && gapi defs build && gapi repo commit-patch
     patch:
       - npm version patch
       - git push
@@ -36,7 +36,8 @@ commands:
     pull: for d in ./*/ ; do (cd "$d" && git checkout master && git pull); done
   info:
     status: for d in ./*/ ; do (cd "$d" && pwd && git status); done
-
+  defs:
+    build: node ./build-definition.js
     # all-publish: for d in ./*/ ; do (cd "$d" && git add . && git commit -m autocommitmessage && git push && npm publish --update-readme --access public); done
 
     #  >/dev/null 2>&
