@@ -41,3 +41,6 @@
 [submodule "starter-client-router-preact"]
 	path = starter-client-router-preact
 	url = git@github.com:rxdi/starter-client-router-preact.git
+[submodule "neo4j"]
+	path = neo4j
+	url = git@github.com:rxdi/neo4j.git
