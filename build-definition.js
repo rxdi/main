@@ -25,18 +25,13 @@ getDirectories(__dirname).forEach(dir => {
       id: count,
       repo: packageJson.name.split('/')[1],
       label: packageJson.name,
+      owner: 'rxdi',
+      folderName: dir.replace(/^.*[\\\/]/, ''),
       url: packageJson.repository.url,
-      namespace: 'rxdi',
+      namespace: packageJson.name.split('/')[0].replace('@', ''),
     });
   }
 });
-
-repositories = [
-  { label: '@rxdi/graphql', namespace: 'rxdi', repo: 'graphql', id: 1 },
-  { label: '@rxdi/neo4j', namespace: 'rxdi', repo: 'neo4j', id: 2 },
-  { label: '@rxdi/core', namespace: 'rxdi', repo: 'core', id: 3 },
-  { label: '@gapi/core', namespace: 'Stradivario', repo: 'gapi-core', id: 4 },
-];
 
 writeFileSync(
   "definitions.json",
