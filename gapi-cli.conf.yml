@@ -7,18 +7,38 @@ commands:
 
   version:
     change:
-      - node ./build-versions.js && for d in ./*/ ; do (cd "$d" && git add . && git commit -m 'autocommitmessage' || true && npm version patch && git push && npm publish --update-readme --access public); done && gapi defs build && gapi repo commit-patch
+      - node ./build-versions.js && for d in ./*/ ; do (cd "$d" && git add . && git commit -m 'autocommitmessage' || true && npm version patch && git push && npm publish --update-readme --access public); done && gapi repo commit-patch
     patch:
       - npm version patch
       - git push
       - for d in ./*/ ; do (cd "$d" && npm version patch && npm publish --update-readme --access public); done && gapi repo commit && gapi version change
+    minor:
+      - npm version minor
+      - git push
+      - for d in ./*/ ; do (cd "$d" && npm version minor && npm publish --update-readme --access public); done && gapi repo commit && gapi version change
+    major:
+      - npm version major
+      - git push
+      - for d in ./*/ ; do (cd "$d" && npm version major && npm publish --update-readme --access public); done && gapi repo commit && gapi version change
   repo:
     checkout:
-      - for d in ./*/ ; do (cd "$d" && git pull); done
+      - for d in ./*/ ; do (cd "$d" && git checkout master); done
     commit-patch:
       - git add .
       - git commit -m 'autocommitmessage'
       - npm version patch
+      - git push
+
+    commit-minor:
+      - git add .
+      - git commit -m 'autocommitmessage'
+      - npm version minor
+      - git push
+
+    commit-major:
+      - git add .
+      - git commit -m 'autocommitmessage'
+      - npm version major
       - git push
     commit:
       - git add .
