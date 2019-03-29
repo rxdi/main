@@ -44,3 +44,6 @@
 [submodule "neo4j"]
 	path = neo4j
 	url = git@github.com:rxdi/neo4j.git
+[submodule "schematics"]
+	path = schematics
+	url = git@github.com:rxdi/schematics.git
