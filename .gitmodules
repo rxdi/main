@@ -47,3 +47,6 @@
 [submodule "schematics"]
 	path = schematics
 	url = git@github.com:rxdi/schematics.git
+[submodule "graphql-rabbitmq-subscriptions"]
+	path = graphql-rabbitmq-subscriptions
+	url = git@github.com:rxdi/graphql-rabbitmq-subscriptions.git
