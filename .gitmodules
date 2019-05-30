@@ -50,3 +50,6 @@
 [submodule "graphql-rabbitmq-subscriptions"]
 	path = graphql-rabbitmq-subscriptions
 	url = git@github.com:rxdi/graphql-rabbitmq-subscriptions.git
+[submodule "graphql-client"]
+	path = graphql-client
+	url = git@github.com:rxdi/graphql-client.git
