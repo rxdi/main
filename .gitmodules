@@ -53,3 +53,6 @@
 [submodule "graphql-client"]
 	path = graphql-client
 	url = git@github.com:rxdi/graphql-client.git
+[submodule "lit-html"]
+	path = lit-html
+	url = git@github.com:rxdi/lit-html.git
