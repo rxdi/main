@@ -56,3 +56,6 @@
 [submodule "lit-html"]
 	path = lit-html
 	url = git@github.com:rxdi/lit-html.git
+[submodule "forms"]
+	path = forms
+	url = git@github.com:rxdi/forms.git
