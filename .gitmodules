@@ -59,3 +59,9 @@
 [submodule "forms"]
 	path = forms
 	url = git@github.com:rxdi/forms.git
+[submodule "starter-client-side-lit-html"]
+	path = starter-client-side-lit-html
+	url = git@github.com:rxdi/starter-client-side-lit-html.git
+[submodule "router"]
+	path = router
+	url = git@github.com:rxdi/router.git
