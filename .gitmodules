@@ -65,3 +65,6 @@
 [submodule "router"]
 	path = router
 	url = git@github.com:rxdi/router.git
+[submodule "xmigrate"]
+	path = xmigrate
+	url = git@github.com:rxdi/xmigrate.git
