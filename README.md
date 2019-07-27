@@ -17,7 +17,7 @@ Main repository [@rxdi/core](https://github.com/rxdi/core)
 [Server Side](https://github.com/rxdi/starter-server-side)
 
 More examples for [@rxdi](https://www.npmjs.com/~rxdi) infrastructure you can check inside [@gapi](https://www.npmjs.com/~gapi) namespace.
-
+ 
 ##### @Beta Decentralized node_modules using ipfs network with rxdi infrastructure
 
 > Install `@rxdi/core` global so we will have `rxdi` command available `npm i -g @rxdi/core`
@@ -27,6 +27,12 @@ More examples for [@rxdi](https://www.npmjs.com/~rxdi) infrastructure you can ch
 > More details you can find [here](https://github.com/rxdi/ipfs-package-example) `ipfs-package-example`
 
 > Example module `https://ipfs.io/ipfs/QmWtJLqyokMZE37DgncpY5HhFvtFQieBzMPDQ318aJeTw6`
+
+> `@rxdi/core` can be found also inside decentralized space [here](https://ipfs.io/ipfs/QmP9n7m1UWkFn2hqt7mnfQYnBtxmFyyvKZHN7hgngQb1gM)
+
+> `@rxdi/core` can be installed with '@rxdi/core' total inception :D `rxdi i QmP9n7m1UWkFn2hqt7mnfQYnBtxmFyyvKZHN7hgngQb1gM`
+
+> No more package downtime!
 
 ## Installation and basic examples:
 ##### To install this library, run:
@@ -291,3 +297,49 @@ If you want to start app with `ts-node` for example you need to set inside `tsco
 }
 
 ```
+
+
+
+# Possible pattern with `@rxdi/core`
+
+```typescript
+import { setup } from '@rxdi/core';
+import { switchMap } from 'rxjs/operators';
+import { combineLatest } from 'rxjs';
+
+setup({
+  services: [
+    {
+      provide: 'gosho',
+      lazy: true,
+      useFactory: async () => 'yey'
+    }
+  ]
+})
+  .pipe(
+    switchMap(ctx =>
+      combineLatest(
+        setup({
+          services: [
+            {
+              provide: 'pesho',
+              useFactory: () => (ctx as any).get('gosho')
+            }
+          ]
+        }),
+        setup({
+          services: []
+        }),
+        setup({
+          services: []
+        }),
+        setup({
+          services: []
+        })
+      )
+    )
+  )
+  .subscribe(ctx => {
+    console.log((ctx as any).get('pesho'));
+  });
+````
