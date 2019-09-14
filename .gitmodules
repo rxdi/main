@@ -68,3 +68,6 @@
 [submodule "xmigrate"]
 	path = xmigrate
 	url = git@github.com:rxdi/xmigrate.git
+[submodule "ui-components"]
+	path = ui-components
+	url = git@github.com:rxdi/ui-components.git
