@@ -71,3 +71,6 @@
 [submodule "ui-components"]
 	path = ui-components
 	url = git@github.com:rxdi/ui-components.git
+[submodule "graphqj"]
+	path = graphqj
+	url = https://github.com/rxdi/graphqj.git
